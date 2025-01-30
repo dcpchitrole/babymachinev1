@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabyMachine V1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>BabyMachine V1</h1>
+        <p>An interactive tool for training and testing machine learning models in your browser.</p>
+    </header>
+
+    <main>
+        <section id="data-collection">
+            <h2>Step 1: Data Collection</h2>
+            <p>Provide examples for your model by uploading images or recording directly.</p>
+            <button id="start-camera">Start Camera</button>
+            <button id="capture-image">Capture Image</button>
+
+            <label for="dataset-class">Choose Dataset:</label>
+            <select id="dataset-class">
+                <option value="A">Class A</option>
+                <option value="B">Class B</option>
+                <option value="C">Class C</option>
+            </select>
+
+            <button id="show-dataset" style="display: none;">Show Dataset</button>
+            <button id="clear-dataset" style="display: none;">Clear Dataset</button>
+
+            <div id="preview">
+                <video id="video" autoplay></video>
+                <canvas id="canvas"></canvas>
+            </div>
+            <p id="capture"></p>
+        </section>
+
+        <section id="model-training">
+            <h2>Step 2: Train the Model</h2>
+            <p>Train your model with the data you have provided.</p>
+            <button id="train-model">Train Model</button>
+            <div id="training-progress">
+                <progress id="progress-bar" value="0" max="100"></progress>
+                <span id="progress-text">0%</span>
+            </div>
+        </section>
+
+        <section id="model-testing">
+            <h2>Step 3: Test the Model</h2>
+            <p>Test your trained model and see predictions in real time.</p>
+            <button id="test-model">Start Real-Time Testing</button>
+            <div id="output">
+              <div class="confidence-bar">
+                <label>Class A:</label>
+                <progress value="0" max="1"></progress>
+                <span class="confidence-value">0%</span>
+              </div>
+              <div class="confidence-bar">
+                <label>Class B:</label>
+                <progress value="0" max="1"></progress>
+                <span class="confidence-value">0%</span>
+              </div>
+              <div class="confidence-bar">
+                <label>Class C:</label>
+                <progress value="0" max="1"></progress>
+                <span class="confidence-value">0%</span>
+              </div>
+            </div>
+          </section>
+        <section id="Export Model">
+            <h2>Step 4: Export Model</h2>
+            <p>Download your trained model for deployment or further training.</p>
+            <button id="export-model">Export Model</button>
+            <div id="export-progress">
+                <progress id="export-progress-bar" value="0" max="100"></progress>
+                <span id="export-progress-text">0%</span>
+            </div>
+            <button id="downlaod-button" style="display:none">Download Model</button>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy;2025 Swagat Sahu. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
